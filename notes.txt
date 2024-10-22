@@ -1,0 +1,30 @@
+- tutorial: https://docs.djangoproject.com/en/5.1/intro/tutorial01/
+
+- if can't connect to PostgreSQL database server at port 5432:
+-- sudo systemctl start postgresql
+-- https://stackoverflow.com/questions/35455109/cant-run-the-server-on-django-connection-refused
+
+- other database help
+-- https://stackoverflow.com/questions/5394331/how-to-set-up-a-postgresql-database-in-django
+-- https://ubuntu.com/server/docs/install-and-configure-postgresql
+
+- database not started / not connecting, check service status
+-- https://dba.stackexchange.com/questions/320575/what-does-postgresql-status-active-exited-mean
+-- sudo systemctl status postgresql  # the umbrella service
+-- sudo systemctl status 'postgresql*'  # the individual services
+-- https://askubuntu.com/a/1013600/638487
+-- https://www.liquidweb.com/blog/install-postgresql-ubuntu/  # how to install and configure and check that it's running, change user to postgres and run psql to access databases
+-- in /etc/postgresql/14/main/pg_hba.conf:
+--- hostssl template1 postgres 127.0.0.1:5432 scram-sha-256
+
+- PostgreSQL config files:
+-- /etc/postgresql/14/main/pg_hba.conf
+-- /etc/postgresql/14/main/pg_ident.conf
+-- /etc/postgresql/14/main/postgresql.conf
+-- ~/.my_pgpass
+-- ~/.pg_service.conf
+
+- to access databases by command line (changes to postgres user to run the psql command):
+-- sudo -u postgres psql
+
+
